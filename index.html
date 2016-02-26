@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="displayanimation.js"></script>
+    <script src="wincheck.js"></script>
+    <script src="gamelogic.js"></script>
+    <script src="gamecreate.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+
+<body>
+    <div id="main-container">
+        <div id="header-container">
+            <header>
+                <h1>VERY INSANE DOGS TIC TAC TOE</h1>
+                <div id="stats-container">
+
+                    <div class="home">
+                        <div class="dunkmeter">Dunk Power</div>
+                        <meter id="homemeter" value="0" high="15" min="0" max="20"></meter>
+                        <div class="logo">
+                            <img src="Images/ABAball.png" alt="logo">
+                        </div>
+                        <div class="label">Home Team</div>
+                        <div class="value"></div>
+                    </div>
+                    <div class="timer">
+                        <div class="label">Clock</div>
+                        <div class="value"></div>
+                    </div>
+                    <div class="away">
+                        <div class="dunkmeter">Dunk Power</div>
+                        <meter id="awaymeter" value="0" min="0" high="15" max="20"></meter>
+                        <div class="logo">
+                            <img src="Images/ABAball.png" alt="logo">
+                        </div>
+                        <div class="label">Away Team</div>
+                        <div class="value"></div>
+                    </div>
+                    <button class="gamebtn" id="start" type="submit">Reset Board</button>
+                </div>
+            </header>
+        </div>
+    <!--game board-->
+        <div class="board">
+            <!--<div id="00" class="box"></div>-->
+            <!--<div id="01" class="box"></div>-->
+            <!--<div id="02" class="box"></div>-->
+            <!--<div id="10" class="box"></div>-->
+            <!--<div id="11" class="box"></div>-->
+            <!--<div id="12" class="box"></div>-->
+            <!--<div id="20" class="box"></div>-->
+            <!--<div id="21" class="box"></div>-->
+            <!--<div id="22" class="box"></div>-->
+        </div>
+    <!--crowd-->
+        <div id="crowd"></div>
+        <div id="crowd2"></div>
+    <!--commentator-->
+        <div id="alert" class="success message"><img src="images/reporter.png" alt=""><h1></h1></div>
+
+    </div>
+<!--hidden modals-->
+        <!--choose shot modal-->
+        <div id="shotPickModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close"></span>
+                    <h2>Choose your shot</h2>
+                </div>
+                <div class="modal-body">
+                    <button class="gamebtn" id="2point">2 pointer</button>
+                    <button class="gamebtn" id="3point">3 pointer</button>
+                    <button class="gamebtn" id="dunk">Dunk!</button>
+                </div>
+            </div>
+        </div>
+        <!--shot modal-->
+        <div id="shotmodal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close"></span>
+                    <h2>Shot Maker</h2>
+                </div>
+                <div class="modal-body">
+                    <div id="hoopNet">
+                        <img id=rim src="Images/backboard.png">
+                        <img id = "net" src="Images/steelnet.png">
+                    </div>
+                    <div id="playingBall">
+                        <img id="ball" src="Images/basketball.png">
+                    </div>
+                    <button class="gamebtn" id="shot">Release to Shoot!</button>
+                </div>
+                <div class="modal-footer">
+                    <h3></h3>
+                </div>
+            </div>
+        </div>
+        <!--menu modal-->
+        <div id="startModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close"></span>
+                    <h2>Selection Menu</h2>
+                </div>
+                <div class="modal-body">
+                    <h4>Home Team</h4>
+                        <select id="team1" name="team1">
+                            <option value="0">Lakers</option>
+                            <option value="1">Clippers</option>
+                            <option value="2">Mavericks</option>
+                        </select>
+                    <h4>Away Team</h4>
+                        <select id="team2" name="team2">
+                            <option value="0">Pacers</option>
+                            <option value="1">Heat</option>
+                            <option value="2">Celtics</option>
+                        </select>
+                    <h4>Game Type</h4>
+                        <select id="gamesize" name="size">
+                            <option value="3">Tic-Tac-Toe Classic</option>
+                            <option value="6">Tic-Tac-Toe - 6x6</option>
+                            <option value="8">Connect 4 Classic</option>
+                            <option value="10">Connect 4 - 10x10</option>
+                        </select>
+                    <h4>Timer</h4>
+                    <select id="gametime" name="timer">
+                        <option value="10">10 sec</option>
+                        <option value="120">2 min</option>
+                        <option value="300">5 min</option>
+                        <option value="600">10 min</option>
+                        <option value="0">No timer</option>
+                    </select>
+                        <button class="gamebtn" id="startgame">Start</button>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>
