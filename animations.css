@@ -1,67 +1,4 @@
-/* The Modal) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-/* Modal Content */
-.modal-content {
-    position: relative;
-    background-color: #51684D;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-/* The Close Button */
-.close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-.close:hover, .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-.modal-header {
-    padding: 2px 16px;
-    background-color: #162929;
-    color: #39aeff;
-}
-.modal-body {
-    height: 60vh;
-    padding: 2px 16px;
-}
-
-.modal-footer {
-    padding: 2px 16px;
-    background-color: #162929;
-    color: white;
-}
+/*commentator*/
 
 .message{
     background-size: 40px 40px;
@@ -100,9 +37,15 @@
     animation-iteration-count: infinite;
 }
 #alert img{
+    animation-name: popup;
+    animation-duration:1s;
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;
     position: absolute;
     right: 5%;
 }
+
+/*crowd animations*/
 #crowd img{
     position: absolute;
     width: 90%;
@@ -128,14 +71,14 @@
 }
 
 #backc{
-    animation: spin .75s ease-in infinite;
+    animation: dance .75s ease-in infinite;
 
 }
 #frontc{
-    animation: spin .5s ease-out infinite;
+    animation: dance .5s ease-out infinite;
 }
 
-@keyframes spin{
+@keyframes dance{
     0%{transform: rotate(0deg);top:0px;}
     50%{transform:rotate(1deg);top:20px;}
     100%{transform:rotate(0deg);top:0px;}
@@ -153,13 +96,11 @@
     animation: lights 3s linear infinite alternate;
 }
 @keyframes lights {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 880px 0;
-    }
+    from {   background-position: 0 0; }
+    to {  background-position: 880px 0;   }
 }
+
+/*Target Meter Animation*/
 
 .target{
     position: absolute;
@@ -173,27 +114,152 @@
     border: 2px solid orange;
     width: 50px;
     height: 50px;
+}
+.fastaim{
     animation: move .5s linear 0s infinite alternate;
 }
-.backboard{
+.slowaim{
+    animation: move 1s linear 0s infinite alternate;
+}
+.aimback{
     position: relative;
     width: 300px;
     height: 50px;
-
 }
+.reverse{
+    transform: scaleX(-1);
+}
+
 @keyframes move {
-    9% {left:0px;} 100% {left:400px;}
+    9% {left:0px;}
+    100% {left:400px;}
 }
 
+/*dunk animation*/
+.dunk{
+    position:absolute;
+    width: 100% !important;
+    left: 300%;
+    top: 300%;
+    animation: dunk 2s ease-in .1s 1;
+}
+.dunk2{
+    position:absolute;
+    width: 100% !important;
+    top: 42%;
+    left:26%;
+}
+.block{
+    position: absolute;
+    width: 100% !important;
+    left: -300%;
+    top: 300%;
+    animation: block 3s ease-in .1s 1;
+}
+#balldrop{
+    position: absolute;
+    animation: drop 1.3s ease-in .1s 1;
+    top: 26%;
+    left:46%;
+    width: 25%;
+}
+#ballmiss{
+    position: absolute;
+    animation: miss 1.3s ease-in .1s 1;
+    top: 26%;
+    left:46%;
+    width: 25%;
+}
 
+.explode{
+    background-size: contain;
+    background-image: url("Images/blowup.png");
+}
+
+.symbolDrop{
+    position: absolute;
+    top: -100%;
+    animation: dropIn 2s ease-in .1s 1;
+}
+
+@keyframes drop {
+    0%{
+        top: 26%;
+        left:46%;
+        transform: rotateZ(0deg);
+    }
+    20% {
+        top: 5%;
+        left:30%;
+        transform: rotateZ(820deg);
+    }
+    100% {
+        top: 800%;
+    }
+}
+@keyframes miss {
+    0%{
+        top: 26%;
+        left:46%;
+        transform: rotateZ(0deg);
+    }
+    30% {
+        top: 5%;
+        left: 150%;
+        transform: rotateZ(820deg);
+    }
+    100% {
+        top: 800%;
+        left: 250%;
+    }
+}
+
+@keyframes dropIn {
+    0%{
+        top: -100%;
+        transform: rotateZ(0deg);
+    }
+    100% {
+        top: 50%;
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes dunk {
+    0%{
+        left: 300%;
+        top: 300%;
+    }
+    70% {
+        top: -30%;
+        left:150%;
+    }
+    100% {
+        top: 42%;
+        left:26%;
+    }
+}
+@keyframes block {
+    0%{
+        left: -300%;
+        top: 300%;
+    }
+    70% {
+        top: -30%;
+        left:25%;
+    }
+    100% {
+        top: 30%;
+        left:45%;
+    }
+}
+/*Shot Animations*/
 #hoopNet{
     position:relative;
     left:45%;
     width:7%;
     top:10%;
     height:10%;
-
-
 }
 
 #rim{
@@ -231,28 +297,28 @@
 }
 .rimshake{
     animation-name:net;
-    animation-duration:2.5s;
+    animation-duration:1.5s;
     animation-timing-function:linear;
 }
 
 /* made basket animation*/
 .swish{
     animation-name: score;
-    animation-duration:2.5s;
+    animation-duration:1.5s;
     animation-timing-function:linear;
 }
 
 /* tooFar basket animation*/
 .tooFar{
     animation-name: long;
-    animation-duration:2.5s;
+    animation-duration:1.5s;
     animation-timing-function:linear;
 }
 
 /* tooShort basket animation*/
 .tooShort{
     animation-name: short;
-    animation-duration:2.5s;
+    animation-duration:1.5s;
     animation-timing-function:linear;
 }
 
@@ -262,7 +328,7 @@
         transform:rotate(0deg)
     }
     100%{
-        transform:rotate(4deg);
+        transform:rotate(10deg);
     }
 }
 
@@ -320,92 +386,52 @@
     }
 }
 
-.gamebtn {
-    padding: 10px 15px;
-    font-size: 20px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color: #fffb1d;
-    background-color: #022842;
-    border: none;
-    border-radius: 15px;
+/* The Modal) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.gamebtn:hover {
-    background-color: #af6944;
+.modal-content {
+    position: relative;
+    background-color: #51684D;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
 }
 
-.gamebtn:active {
-    background-color: #8e04af;
-    transform: translateY(4px);
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
 }
 
-/*Main Game and Stats Styling*/
-.away{
-    float: left;
-    font-size: 3vmax;
-    /*background-image: url(Images/ABAball.png);*/
-    /*background-repeat: no-repeat;*/
+.modal-header {
+    padding: 2px 16px;
+    background-color: #162929;
+    color: #39aeff;
 }
-.home{
-    float: right;
-    font-size: 3vmax;
-    /*background-image: url(Images/bball.png);*/
-    /*background-repeat: no-repeat;*/
-    align-items: center;
-    justify-content: center;
-}
-.current_team{
-    color:yellow;
+.modal-body {
+    height: 60vh;
+    padding: 2px 16px;
 }
 
-#stats-container{
-    text-transform: uppercase;
-}
-
-header {
-    width: 100%;
-    height: 10%;
-    background-color: rgba(0, 0, 0, .3);
-    font-size: 16px;
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #162929;
     color: white;
-    padding:.1%;
-    text-align: center;
-    font-family:scoreboard;
-}
-
-.board{
-    width: 800px;
-    height: 700px;
-    display: flex;
-    flex-flow: row wrap;
-    margin: 0 auto;
-    align-items: center;
-
-}
-.box{
-    text-align: center;
-    font-size: 80px;
-    /*width: 33%;*/
-    /*height: 200px;*/
-    border: none;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(Images/hoop.png);
-    width: 200px;
-    height: 200px;
-    background-repeat: no-repeat;
-
-}
-body {
-    box-sizing: border-box;
-    background: url("Images/hardwood.jpg");
-    background-size: cover;
-}
-@font-face {
-    font-family: scoreboard;
-    src: url(Images/scoreboard.ttf);
 }
