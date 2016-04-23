@@ -1,12 +1,10 @@
-# hacka-tictactoe-athon
+Tic Tac Toe Basketball
 
-Scope: 
-- Make a tic-tac-toe game
-  - at least 2 players
-  - at least 3x3 board size
-  - players alternate in some way or form
-  - one player should be able to win (though is not guaranteed)
-- Additional requirements:
-  - at least 2 board sizes
-  - Dynamic win condition generation: no hard-coded if statements or data structures to determine win conditions.  Such structures can be made, but must be made dynamically via code, not hand-coded in the final product.
-  - players must be able to choose which symbol they use
+The traditional game of Tic Tac Toe inspired by the video game "NBA Jam" and Basketball.  Click a square on the grid to shoot a basket.  If made, your team's logo will appear in the square selected.  If shot is missed, it is the next player's turn to shoot.  Get your team's basketballs on the board either 3 in a row or diagonally to win! 
+
+### Project Notes
+* "Hackathon" 3 person group project where my role was managing version control, creating and assigning issues, and dynamically creating part of the tic tac toe row layout, and the design of the game ("NBA Jam" and NBA Basketball themes).  
+* This project taught me how to work effectively in a group and the importance of meeting deadlines.
+
+Live Demo at www.markjurkiewicz.com/TicTacToeBasketball
+![screen shot tic tac toe bball](/Images/tictactoe.png?raw=true "screenshot tic tac toe bball")
